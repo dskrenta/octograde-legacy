@@ -1,0 +1,136 @@
+       
+            
+            <section id="content">
+                <div class="container">
+                    
+			<div class="card">
+                    		<div class="card-header">
+                            		<h2>Test Settings</h2>
+                        	</div>
+                    		<div class="card-body card-padding">
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<div class="fg-line">
+									<input type="text" class="form-control input" id="test_title" placeholder="Test Title">
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<div class="fg-line">
+									<input type="number" min="1" class="form-control input" id="test_duration" placeholder="Test Duration (# Minutes)">
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+                    
+                    
+		<div class="card question">
+                    	<div style="margin:20px 0px;" class="card-header">
+                    		<div style="height: 31px;" class="navLeft">
+                    			<h2 class="vCenter">Question 1</h2>
+				</div>
+				<div class="navRight">
+					<div class="dInline">
+						<span class="replace1">
+							<button style="margin-right:10px;" class="btn btn-default btn-icon-text noShad btnBor addAnswer" onclick="addAnswer(1, 4);">Add <i class="zmdi zmdi-plus noMarR"></i></button>
+						</span>
+						<span class="delete1">
+							<button style="margin-right:10px;" class="btn btn-default btn-icon-text noShad btnBor" onclick="deleteAnswer(1, 4);">Delete <i class="zmdi zmdi-close noMarR"></i></button>
+						</span>
+					</div>
+					<select class="selectpicker dInline" id="answer_1">
+						<option value="hide">Correct Answer </option>
+						<option rel="icon-temperature" id="option_1_1" value="1">1</option>
+						<option rel="icon-temperature" id="option_1_2" value="2">2</option>
+						<option rel="icon-temperature" id="option_1_3" value="3">3</option>
+						<option rel="icon-temperature" id="option_1_4" value="4">4</option>
+					</select>			
+				</div>
+                    	</div>
+                    	<div class="card-body card-padding">
+                    		<div class="row">
+					<div class="col-sm-6">
+						<!--<textarea class="createArea" id="question_1" placeholder="Enter Question Here"></textarea>-->
+						<div class="summernote" id="question_1"></div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group createA set_1">
+							<input type="text" class="placePad form-control" id="answer_1_1" placeholder="Answer 1">
+						</div>
+						<div class="form-group createA set_1">
+							<input type="text" class="placePad form-control" id="answer_1_2" placeholder="Answer 2">
+						</div>
+						<div class="form-group createA set_1">
+							<input type="text" class="placePad form-control" id="answer_1_3" placeholder="Answer 3">
+						</div>
+						<div class="form-group createA set_1">
+							<input type="text" class="placePad form-control" id="answer_1_4" placeholder="Answer 4">
+						</div>
+					</div>
+				</div>			                    	                    		
+                    	</div>
+		</div>
+                   
+		<div class="row">
+			<div class="col-md-6">			 
+                    <div class="card">
+                    		<button class="btn btn-default btn-icon-text addQuestion noShad" onclick="addQuestion();";>Add Question <i class="zmdi zmdi-plus"></i></button>
+                    </div>
+			</div>
+			<div class="col-md-6">
+		    <div class="card">
+                                <button class="btn btn-default btn-icon-text addQuestion noShad" onclick="deleteQuestion();";>Delete Question <i class="zmdi zmdi-close"></i></button>
+                    </div>
+			</div>
+                </div>
+    
+                    <button id="createTestButton" style="margin-left: calc(50% - 100px); width: 200px;" class="btn btn-default btn-icon-text" onclick="createTest();">Finish <i class="zmdi zmdi-arrow-forward"></i></button>
+                    
+                </div>
+            </section>
+        </section>
+  
+	<!-- Modal Help -->
+        <div class="modal fade" id="modalHelp" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <center><h1 class="modal-title red">Help</h1></center>
+                                </div>
+                                <div class="modal-body">
+                                        <ol>
+                                                <li>Create a test by clicking the plus icon on the dashboard</li>
+                                                <li>Activate and deactivate a test by clicking the toggle button</li>
+                                                <li>Give the test ID to students who you would like to take the test</li>
+                                                <li>View the test results by clicking the test results link on the dashboard</li>
+                                        </ol>
+                                </div>
+                                <div class="modal-footer">
+                                        <center><button type="button" class="btn btn-link" data-dismiss="modal">Close</button></center>
+                                </div>
+                        </div>
+                </div>
+        </div>
+     
+	<!-- Javascript Libraries -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/sweetalert.min.js"></script>
+	<script src="/js/library.js"></script>
+	<script src="https://apis.google.com/js/platform.js?onload=onLoad" defer></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.0/summernote.js"></script>
+       
+	<script>
+		$(document).ready(function()
+                {
+                        displayToolbar();
+			$('.summernote').summernote();
+                });
+	</script> 
+ 
+    </body>
+  </html>

@@ -1,0 +1,124 @@
+	<script>
+		var user = window.atob(localStorage.getItem("user"));
+        	user = JSON.parse(user);
+        	var type = user.type;
+
+		if(type == 0)
+		{
+			window.location = "student";
+		}
+	</script>
+
+        <section id="main">
+            
+            <section id="content">
+                <div class="container">
+                    
+                    <div class="row">
+			<!--
+                        <div class="col-sm-6">
+                            <div class="card">
+								<div class="card-body card-padding">
+									<h1 style="padding-bottom: 20px;"">Hello, <span id="nameBox"></span>!</h1>
+									<h4 style="color: #6c6f70; padding-bottom: 30px;">Click here in order to create a test. Add the test code and password and begin your test</h4>
+									<p><a class="btn btn-primary btn-lg" href="/teacher/createTest" role="button">Create Test</a></p>
+								</div>
+							</div>
+                        </div>
+			-->                    
+
+			<div class="col-sm-12">
+                        	<div class="card">
+					<div class="card-header ch-alt m-b-20">
+                                    		<h2>My Tests <small>Tests you have created</small></h2>
+                                   		 <ul class="actions">
+                                        		<li>
+                                            			<a href="">
+                                                			<i class="zmdi zmdi-refresh-alt"></i>
+                                            			</a>
+                                        		</li>
+                                    		</ul>
+                                    		<!--<a href="/teacher/createTest"><button class="btn bgm-blue btn-float waves-effect"><i class="zmdi zmdi-plus"></i></button></a>-->
+						<button class="btn bgm-blue btn-float waves-effect dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-plus"></i></button>
+						<ul class="dropdown-menu pull-right" role="menu">
+                                            		<li><a href="/pro/createTest">Create new test</a></li>
+                                            		<li><a href="#">Import test data</a></li>
+							<li><a href="#">OpenEd resource library</a></li>
+                                        	</ul>
+              				</div>
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Test Name</th>
+									<th>Test ID</th>
+									<th>Results</th>
+									<th>Duration</th>
+									<th>Date</th>
+									<th>State</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="testList"></tr>
+							</tbody>
+						</table>
+					</div>
+					<!--<a class="lv-footer" href="#" onclick="listTestsTeacher();">Load More</a>-->
+					<!--
+					<center>
+						<button onclick="listTestsTeacher();" class="btn btn-primary btn-md m-t-5">Load More</button>
+					</center>
+					-->
+				</div>
+                        </div>
+                    	
+                    	
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2015 Octograde
+        </footer>
+
+	<!-- Modal Help -->
+        <div class="modal fade" id="modalHelp" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <center><h1 class="modal-title red">Help</h1></center>
+                                </div>
+                                <div class="modal-body">
+					<ol>
+						<li>Create a test by clicking the plus icon on the dashboard</li>
+						<li>Activate and deactivate a test by clicking the toggle button</li>
+						<li>Give the test ID to students who you would like to take the test</li>
+						<li>View the test results by clicking the test results link on the dashboard</li>
+					</ol>
+				</div>
+                                <div class="modal-footer">
+                                        <center><button type="button" class="btn btn-link" data-dismiss="modal">Close</button></center>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- Javascript Libraries -->
+	<script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/sweetalert.min.js"></script>
+	<script src="/js/library.js"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad" defer></script>
+
+	<script>
+		$(document).ready(function()
+		{
+			displayToolbar();
+			//document.getElementById("nameBox").innerHTML = JSON.parse(localStorage.getItem("user")).name;
+			listTestsTeacher();
+		});
+	</script>
+
+    </body>
+  </html>

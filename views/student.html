@@ -1,0 +1,147 @@
+	<script>
+                var user = window.atob(localStorage.getItem("user"));
+                user = JSON.parse(user);
+                var type = user.type;
+
+                if(type == 1)
+                {
+                        window.location = "teacher";
+                }
+        </script>
+	
+        <section id="main">
+            
+            <section id="content">
+                <div class="container">
+        
+	<!--	<div class="row">
+                    
+                        <div class="col-sm-12">
+                            <div class="card">
+								<div class="card-header">
+									<h2>Take Test<small>Enter the test key that your teacher gave you so you can take a test. Good luck!</small></h2>
+								</div>
+								<div class="card-body card-padding">
+									
+									<div class="form-group">
+										<div class="fg-line">
+											<input type="text" id="testID" class="form-control input-lg" placeholder="Test Key">
+										</div>
+									</div>	
+									<input id="sendButton" type="button" class="btn btn-link" onclick="launchTest();" value="Begin Test"/>
+									
+									
+									<div class="row">
+                                						<div class="col-md-8">
+                                    							<div class="form-group fg-line">
+                                        							<input type="text" id="testID" class="form-control input-lg" id="exampleInputEmail2" placeholder="Test Key">
+                                    							</div>
+                                						</div>
+                                						<div class="col-md-4">
+                                    							<button onclick="launchTest();" class="btn btn-primary btn-md m-t-5">Begin Test</button>
+                                						</div>
+                            						</div>-->
+									
+
+									<div class="row">
+                    
+										<div class="col-sm-12">
+											<div class="card">
+												<div class="card-body keyDiv card-padding">
+													<div class="testInput">
+														<div class="fg-line">
+															<input type="text" id="testID" class="form-control input-lg" placeholder="Test Key">
+														</div>
+													</div>	
+								
+													
+													<button onclick="launchTest();" class="btn testStart btn-link">Begin Test</button>
+									
+												</div>
+											</div>
+										</div>
+						
+									</div>
+<!--									
+			
+								</div>
+							</div>
+						</div>
+		</div>	-->
+			            
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+								<div class="card-header">
+									<h2>Test Review<small>Here is a list of all the tests you have taken.</small></h2>
+								</div>
+	
+								<div class="table-responsive">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>Test Name</th>
+												<th>Percentage</th>
+												<th>Score</th>
+												<th>Review</th>
+												<th>Date</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="testList"></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2016 Octograde
+        </footer>
+        
+	<!-- Modal Help -->
+        <div class="modal fade" id="modalHelp" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <center><h1 class="modal-title red">Help</h1></center>
+                                </div>
+                                <div class="modal-body">
+                                       	<ol>
+                                               	<li>Enter the test ID given by your teacher for the test and submit</li>
+                                               	<li>Begin the test by clicking the begin test button on the popup window</li>
+                                               	<li>Complete all of the questions before the time limit</li>
+                                               	<li>Navigate the questions with the numbered bar at the bottom of the test view</li>
+						<li>Submit the test by clicking the submit test button and view your grade on the dashboard</li>
+                                       	<ol>
+                                </div>
+                                <div class="modal-footer">
+                                        <center><button type="button" class="btn btn-link" data-dismiss="modal">Close</button></center>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- Javascript Libraries -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/sweetalert.min.js"></script>
+	<script src="/js/library.js"></script>
+	<script src="https://apis.google.com/js/platform.js?onload=onLoad" defer></script>
+       
+	<script>
+		$(document).ready(function()
+                {
+                        displayToolbar();
+			listTestsStudent();
+                });
+	</script> 
+
+        
+    </body>
+  </html>

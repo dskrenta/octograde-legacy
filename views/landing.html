@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<script>
+		function start()
+		{
+			var user = JSON.parse(localStorage.getItem("user"));
+			if(user)
+			{
+				if(user["type"] == 0)
+				{
+					window.location = "http://octograde.com/student";
+				}
+				else
+				{
+					window.location = "http://octograde.com/teacher";
+				}
+			}
+		}
+		start();
+
+
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+		window.onclick = function(event) {
+	  		if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+		  			var openDropdown = dropdowns[i];
+		 		 	if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+		  			}
+				}
+	  		}
+		}
+	</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="435767662604-ocjd4hhsm4cbc2gplhmm47odt9pv277d.apps.googleusercontent.com">
+    <meta name="google-site-verification" content="LlAdcjU9JRYzRsklUH31_pBEspLSMbF3rjofvI8Tpq4" />
+    <link rel="icon" type="image/png" href="/images/favicon2.png">
+    <title>Octograde</title>
+    <link href="/css/styleNew.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="/css/sweetalert.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("fbe1500f67d360fdb95c6be1cb1c1bdd");</script><!-- end Mixpanel -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74314312-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head>
+  <body>
+  <!--/////////// HEADER SECTION //////////-->
+  <section id="intro">
+
+	<div class="dropdown">
+		<button onclick="myFunction()" class="dropbtn">&#x2162;</button>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/terms">Terms of Service</a>
+			<a href="/privacy">Privacy</a>
+		</div>
+	</div>
+
+ 	<div class="main">
+
+    		<header>
+    			<nav class="navbar navbar-default" role="navigation">
+  				<div class="container">
+  				<!-- Brand and toggle get grouped for better mobile display -->
+        				<div class="container">
+						<img src="/images/octograde5.png" style="height: 90px; margin-right: auto; margin-left: auto;">
+						<br>
+        	  				<a class="navbar-brand">Octograde</a>
+						<div id="main-nav" class="navbar-collapse">
+        					</div><!-- /navbar-collapse -->
+        				</div><!-- /container -->
+      				</div>
+    			</nav>
+  		</header>
+
+		<div class="containerHome">
+    			<div class="col-md-12">
+    				<h1>Testing made simple.</h1>
+    				<h2>Octograde eliminates the hassle involved with creating and administering online tests. Distribute tests to your students in a secure format over multiple devices with the click of a button.</h2>
+    				<center>
+    					<div id="my-signin2"></div>
+    				</center>
+    			</div>
+
+  		</div><!-- /container -->
+	</div>
+
+  </section>
+
+<!-- Modal -->
+
+
+<div class="text-container">
+<div class="modal fade" id="myRegisterModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        <h2 class="modal-title" id="myModalLabel">Welcome to Octograde, <span id="name"></span></h2>
+      </div>
+      <div class="modal-body">
+        <div class="list-group">
+		<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-collapse">
+
+				<a class="collapsed list-view-color" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+							High School
+						</h4>
+					</div>
+				</a>
+				<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<div class="list-view">
+							<a href="#" class="list-view-color sign-in-item1 list-view-item" onclick="setType(0, false);">Student</a>
+							<br>
+							<a href="#" class="list-view-color sign-in-item2 list-view-item" onclick="setType(1, true);">Teacher</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="panel panel-collapse">
+
+				<a class="collapsed list-view-color" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					<div class="panel-heading" role="tab" id="headingTwo">
+						<h4 class="panel-title">
+							Higher Education
+						</h4>
+					</div>
+				</a>
+				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<div class="list-view">
+							<a href="#" class="list-view-color sign-in-item1 list-view-item" onclick="setType(0, true);">Student</a>
+							<br>
+							<a href="#" class="list-view-color sign-in-item2 list-view-item" onclick="setType(1, false);">Teacher</a>
+						</div>
+					</div>
+				</div>
+			</div>
+            	</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+			<div class="modal fade" id="myStudentRegisterModal" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-mar modal-sm">
+					<div class="modal-content modal-rad'r">
+						<div class="modal-header modal-top-back">
+							<img class="paymentImage" src="/images/octograde5.png">
+							<h4 class="modal-title">Octograde</h4>
+						</div>
+						<div class="modal-body modal-body-back">
+
+							<div class="paymentContainer">
+
+								<form action="" method="POST" id="payment-form">
+									<span class="payment-errors"></span>
+
+									<div class="modal-pay-text">
+										<p>$4/month billed annually</p>
+									</div>
+
+									<div class="form-row cardInput">
+										<input class="paymentInput input1" placeholder="Card number" type="text" data-stripe="number"/>
+									</div>
+
+									<div class="form-row">
+										<input class="paymentInput input2" placeholder="CVC" type="text" data-stripe="cvc"/>
+										<input class="paymentInput input3" placeholder="MM" type="text" data-stripe="exp-month"/>
+										<input class="paymentInput input4" placeholder="YYYY" type="text" data-stripe="exp-year"/>
+									</div>
+
+									<div class="modal-pay-text2">
+										<p>Payment is processed with Stripe</p>
+										<a class="tooltipStripe" href="https://stripe.com" target="_newtab"><i class="fa fa-lg modal-pay-icon fa-info-circle"></i><span>We use <b>Stripe</b> to securely store your payment info for quick checkout on this site and others.</span></a>
+									</div>
+
+									<button class="paymentSubmit" type="submit">Confirm</button>
+								</form>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+<div class="text-container">
+<div class="modal fade" id="myIEModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title">Internet Explorer Notification</h2>
+      </div>
+      <div class="modal-body">
+          We recommend that you use a newer browser such as Chrome, Firefox, Safari, or Edge. Support for Internet Explorer is limited.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="myTeacherRegisterModal" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-mar modal-sm">
+                                        <div class="modal-content modal-rad'r">
+                                                <div class="modal-header modal-top-back">
+                                                        <img class="paymentImage" src="/images/octograde5.png">
+                                                        <h4 class="modal-title">Octograde</h4>
+                                                </div>
+                                                <div class="modal-body modal-body-back">
+
+                                                        <div class="paymentContainer">
+
+                                                                <form action="" method="POST" id="payment-form2">
+                                                                        <span class="payment-errors"></span>
+
+                                                                        <div class="modal-pay-text">
+                                                                                <p>$4.99/month billed annually</p>
+                                                                        </div>
+
+                                                                        <div class="form-row cardInput">
+                                                                                <input class="paymentInput input1" placeholder="Card number" type="text" data-stripe="number"/>
+                                                                        </div>
+
+                                                                        <div class="form-row">
+                                                                                <input class="paymentInput input2" placeholder="CVC" type="text" data-stripe="cvc"/>
+                                                                                <input class="paymentInput input3" placeholder="MM" type="text" data-stripe="exp-month"/>
+                                                                                <input class="paymentInput input4" placeholder="YYYY" type="text" data-stripe="exp-year"/>
+                                                                        </div>
+
+                                                                        <div class="modal-pay-text2">
+                                                                                <p>Payment is processed with Stripe</p>
+                                                                                <a class="tooltipStripe" href="https://stripe.com" target="_newtab"><i class="fa fa-lg modal-pay-icon fa-info-circle"></i><span>We use <b>Stripe</b> to securely store your payment info for quick checkout on this site and others.</span></a>
+                                                                        </div>
+
+                                                                        <button class="paymentSubmit" type="submit">Confirm</button>
+                                                                </form>
+
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" defer></script>
+	<script src="/js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script src="/js/library.js"></script>
+
+	<script>
+        var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
+        if(isIE)
+        {
+		mixpanel.track("Internet Explorer visit");
+          	$('#myIEModal').modal('show');
+        }
+     	</script>
+
+	<script>
+	Stripe.setPublishableKey('pk_test_oh7pEm055io8iHNYk0W25gb8');
+
+	var stripeResponseHandler = function(status, response)
+	{
+        	var $form = $('#payment-form');
+        	if (response.error)
+        	{
+                	// Show the errors on the form
+                	$form.find('.payment-errors').text(response.error.message);
+                	$form.find('button').prop('disabled', false);
+        	}
+        	else
+        	{
+                	// token contains id, last4, and card type
+                	var token = response.id;
+                	// Insert the token into the form so it gets submitted to the server
+                	$form.append($('<input type="hidden" name="stripeToken" />').val(token));
+                	// Insert student email and uuid into the form
+                	$form.append($('<input type="hidden" name="email" />').val(window.email));
+                	$form.append($('<input type="hidden" name="uuid" />').val(window.btoa(window.email)));
+			$form.append($('<input type="hidden" name="type" />').val(window.type));
+			// and re-submit
+                	$form.get(0).submit();
+		}
+	};
+
+	jQuery(function($)
+	{
+        	$('#payment-form').submit(function(e)
+        	{
+                	var $form = $(this);
+                	// Disable the submit button to prevent repeated clicks
+                	$form.find('button').prop('disabled', true);
+                	Stripe.card.createToken($form, stripeResponseHandler);
+                	// Prevent the form from submitting with the default action
+                	return false;
+        	});
+	});
+
+	var stripeResponseHandler2 = function(status, response)
+        {
+                var $form = $('#payment-form2');
+                if (response.error)
+                {
+                        // Show the errors on the form
+                        $form.find('.payment-errors').text(response.error.message);
+                        $form.find('button').prop('disabled', false);
+                }
+                else
+                {
+                        // token contains id, last4, and card type
+                        var token = response.id;
+                        // Insert the token into the form so it gets submitted to the server
+                        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+                        // Insert student email and uuid into the form
+                        $form.append($('<input type="hidden" name="email" />').val(window.email));
+                        $form.append($('<input type="hidden" name="uuid" />').val(window.btoa(window.email)));
+			$form.append($('<input type="hidden" name="type" />').val(window.type));
+                        // and re-submit
+                        $form.get(0).submit();
+                }
+        };
+
+        jQuery(function($)
+        {
+                $('#payment-form2').submit(function(e)
+                {
+                        var $form = $(this);
+                        // Disable the submit button to prevent repeated clicks
+                        $form.find('button').prop('disabled', true);
+                        Stripe.card.createToken($form, stripeResponseHandler);
+                        // Prevent the form from submitting with the default action
+                        return false;
+                });
+        });
+	</script>
+
+  </body>
+</html>

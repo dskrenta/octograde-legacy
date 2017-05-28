@@ -1,0 +1,57 @@
+<section id="main">
+            
+            <section id="content">
+                <div class="container">
+                    
+                    <div class="row">
+                      
+			<span id="gradeData"></span>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2016 Octograde
+        </footer>
+
+	<!-- Modal Help -->
+        <div class="modal fade" id="modalHelp" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <center><h1 class="modal-title red">Help</h1></center>
+                                </div>
+                                <div class="modal-body">
+                                        <ol>
+                                                <li>Create a test by clicking the plus icon on the dashboard</li>
+                                                <li>Activate and deactivate a test by clicking the toggle button</li>
+                                                <li>Give the test ID to students who you would like to take the test</li>
+                                                <li>View the test results by clicking the test results link on the dashboard</li>
+                                        </ol>
+                                </div>
+                                <div class="modal-footer">
+                                        <center><button type="button" class="btn btn-link" data-dismiss="modal">Close</button></center>
+                                </div>
+                        </div>
+                </div>
+        </div>
+       
+	<!-- Javascript Libraries -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/library.js"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad" defer></script>
+	<script src="/js/sweetalert.min.js"></script>
+
+        <script>
+                $(document).ready(function()
+                {
+                        displayToolbar();
+			displayGradeData();
+                });
+        </script>
+
+    </body>
+  </html>
