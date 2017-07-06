@@ -1,4 +1,5 @@
 var express = require('express');
+var cookieSession = require('cookie-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -12,7 +13,15 @@ var ddb = require('dynamodb').ddb({ accessKeyId: process.env.ACCESS_KEY_ID, secr
 // Stripe setup
 var stripe = require('stripe')(process.env.STRIPE_KEY);
 
+// App setup
 var app = express();
+
+// Session
+app.use(cookieSession({
+  name: 'session',
+  secret: 'octogradeUnsecureSessionCookie',
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,3 +1,4 @@
+require('dotenv').config('../.env');
 var ddb = require('dynamodb').ddb({ accessKeyId: process.env.ACCESS_KEY_ID, secretAccessKey: process.env.SECRET_ACCESS_KEY, endpoint: 'dynamodb.us-west-1.amazonaws.com' });
 var table = 'tests';
 

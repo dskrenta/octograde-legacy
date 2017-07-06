@@ -4,7 +4,7 @@ var User = require('../models/user');
 var Test = require('../models/test');
 var Grades = require('../models/grade');
 
-router.get('/', function(req, res) 
+router.get('/', function(req, res)
 {
 	res.render('student');
 });
@@ -57,7 +57,7 @@ router.post('/getTest', function(req, res)
 		}
 		else
 		{
-			res.send(data);	
+			res.send(data);
 		}
 	});
 });
@@ -101,7 +101,7 @@ router.post('/testID', function(req, res)
 						}
 						if(!exists)
                                 		{
-                                        		req.session.test = data;        
+                                        		req.session.test = data;
                                         		res.send("true");
                                 		}
                                 		else if(exists)
@@ -136,7 +136,7 @@ router.post('/gradeTest', function(req, res)
            	else
             	{
 			//var gradeExists = false;
-			//var existingGrades = JSON.parse(data["tests"]); 
+			//var existingGrades = JSON.parse(data["tests"]);
 			//for(i = 0; i < existingGrades.length; i++)
 			//{
 			//	if(existingGrades[i]["uuid"] == uuid)
@@ -214,7 +214,7 @@ router.post('/gradeTest', function(req, res)
 					break;
 				}
 			}
-			if(exists) 
+			if(exists)
                     	{
                       		res.send("false");
                       	}
@@ -232,7 +232,7 @@ router.post('/gradeTest', function(req, res)
                                            	res.send("false");
                                      	}
                               	});
-                     	}			
+                     	}
 		}
 	});
 });
